@@ -11,3 +11,18 @@
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
+
+const meme = document.createElement("img");
+meme.setAttribute(
+  "src",
+  "https://assets.rebelmouse.io/eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpbWFnZSI6Imh0dHBzOi8vYXNzZXRzLnJibC5tcy8yMjkxNzE3My9vcmlnaW4uanBnIiwiZXhwaXJlc19hdCI6MTYwNDExNjkwOH0._9Ltw00lLR-Zc8SZa1tr3p4_g2zDbU0WJ-VN8luLOIQ/img.jpg?width=980"
+);
+
+const body = document.querySelector("body");
+
+body.addEventListener("click", showImage);
+
+function showImage() {
+  body.appendChild(meme);
+  body.removeEventListener("click", showImage);
+}

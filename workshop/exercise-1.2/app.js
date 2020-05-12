@@ -21,3 +21,30 @@
 // Stretch goal
 // Make the countdown live (show a countdown that updates several times a
 // second)
+
+const body = document.querySelector("body");
+const result = document.querySelector(".result");
+let min = 3;
+let max = 5;
+
+const randomTime = Math.floor(Math.random() * (max - min + 1)) + min;
+let displayTimeObj = document.createTextNode(randomTime);
+
+let userClicked = false;
+
+document.querySelector("#time").appendChild(displayTimeObj);
+
+function timed() {
+  userClicked = true;
+  result.innerText = "You Won!";
+  body.removeEventListener("click", timed);
+}
+
+setTimeout(function () {
+  if (!userClicked) {
+    result.innerText = "You Lost!";
+    body.removeEventListener("click", timed);
+  }
+}, randomTime * 1000);
+
+body.addEventListener("click", timed);

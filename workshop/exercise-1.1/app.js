@@ -13,3 +13,22 @@
 // OPTIONAL
 // Feel free to add some CSS to this once you're done
 // --------------------------------------------------
+
+const body = document.querySelector("body");
+const result = document.querySelector(".result");
+let userClicked = false;
+
+function timed() {
+  userClicked = true;
+  result.innerText = "You Won!";
+  body.removeEventListener("click", timed);
+}
+
+setTimeout(function () {
+  if (!userClicked) {
+    result.innerText = "You Lost!";
+    body.removeEventListener("click", timed);
+  }
+}, 5000);
+
+body.addEventListener("click", timed);

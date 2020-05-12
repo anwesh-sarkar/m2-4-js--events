@@ -1,0 +1,19 @@
+body {
+  height: 50vh;
+  width: 100%;
+  font-family: "Noto Sans JP", sans-serif;
+  background-color: black;
+}
+
+.page {
+  display: flex;
+  flex-direction: row;
+  flex: 1;
+}
+
+section {
+  width: 33%;
+  text-align: center;
+  color: white;
+  height: 30%;
+}
